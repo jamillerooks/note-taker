@@ -10,6 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "storejs": "^2.0.1",
+    "util": "^0.12.4",
+    "uuid": "^8.3.2"
   }
 }
