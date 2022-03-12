@@ -1,35 +1,34 @@
-const express = require('express');
-const router = express.Router();
+const router = require('express').Router();
 const storage = require('../db/storage');
 
 //Gets existing notes
+
 router.get('/notes', (req, res) => {
-	storage
-		.getNotes()
-		.then((notes) => {
-			res.json(notes);
-		})
-		.catch((e) => {
-			res.stat(500).json(e);
-		});
+    storage
+        .getNotes()
+        .then(notes => res.json(notes))
+        .catch(err => res.status(500).json(err));
 });
 
 //Post new note
 router.post('/notes', (req, res) => {
-	console.log(req.body);
-	storage
-		.addNote(req.body)
-		.then((notes) => {
-			res.json(notes);
-		})
-		.catch((e) => {
-			res.stat(500).json(e);
-		});
+    storage
+        .addNote(req.body)
+        .then((note) => res.json(note))
+        .catch(err => res.status(500).json(err));
 });
 
-router.delete('/notes:id', (req, res)=>{
-    storage.removeNote(req.params.id).then(() =>res.json({ok: true}))
-    .catch((e) => res.status(500).json(e))
+//Delete note
+router.delete('/notes/:id', (req, res) => {
+    storage
+        .deleteNote(req.params.id)
+        .then(() => res.json({ ok: true }))
+        .catch(err => res.status(500).json(err));
 });
+
+module.exports = router;
+
+
+		
 
 module.exports = router;

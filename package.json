@@ -1,17 +1,26 @@
 {
-  "name": "js",
+  "name": "note-taker",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Express.js note taking app that is deployed on Heroku",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamillerooks/note-taker.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamillerooks/note-taker/issues"
+  },
+  "homepage": "https://github.com/jamillerooks/note-taker#readme",
   "dependencies": {
     "express": "^4.17.3",
-    "storejs": "^2.0.1",
+    "fs": "^0.0.1-security",
     "util": "^0.12.4",
     "uuid": "^8.3.2"
   }
